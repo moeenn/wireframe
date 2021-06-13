@@ -1,11 +1,12 @@
 :root {
-  --base-color: hsl(223, 28%, 94%);
-  --active-color: hsl(223, 28%, 90%);
+  --base-color: hsl(0, 0%, 94%);
+  --active-color: hsl(0, 0%, 90%);
   --font-size: 0.9rem;
-  --font-color: hsl(230, 18%, 20%);
-  --font-color-dull: hsl(230, 18%, 55%);
+  --font-color: hsl(0, 0%, 20%);
+  --font-color-dull: hsl(0, 0%, 55%);
   --border: calc(var(--font-size) / 10) solid var(--active-color);
-  --space: clamp(1rem, 2vw, 2rem);
+  --space: clamp(1rem, 1.6vw, 2rem);
+  --container-width: 85vw;
 }
 
 :is(*, ::before, ::after) {
@@ -17,10 +18,19 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  padding: var(--space);
   font-size: var(--font-size);
   color: var(--font-color);
   line-height: calc(var(--font-size) * 1.611);
+}
+
+section {
+  padding: calc(var(--space) * 2) 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width);
+  width: 100%;
 }
 
 :is(h1, h2, h3, h4, h5, h6) {
@@ -102,7 +112,7 @@ fieldset > :is(input, textarea, select) {
 
 hr {
   border-bottom: var(--border);
-  margin: calc(var(--space) * 2) 0;
+  margin: var(--space) 0;
 }
 
 a {

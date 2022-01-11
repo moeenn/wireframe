@@ -2,77 +2,126 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/dist/wireframe.css">
-    <title>Wireframe CSS</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/wireframe.css">
+  <title>Wireframe CSS - Dashboard</title>
+
+  <style>
+    body {
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 4.5rem auto;
+      grid-template-areas:
+        "nav"
+        "content";
+    }
+
+    nav {
+      grid-area: nav;
+    }
+
+    #content {
+      grid-area: content;
+      overflow-y: auto;
+    }
+  </style>
 </head>
 
 <body>
-    <section class="py-2">
-        <div class="container bg-white shadow p-2">
-            <h1>Wireframe</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium perferendis laborum autem similique
-                soluta
-                voluptatem natus quas voluptas repudiandae itaque asperiores blanditiis, mollitia doloribus qui, consequatur
-                libero cumque doloremque harum.</p>
-
-            <p style="color: var(--font-color-dull);">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Praesentium
-                perferendis laborum autem similique soluta
-                voluptatem natus quas voluptas repudiandae itaque asperiores blanditiis, mollitia doloribus qui, consequatur
-                libero cumque doloremque harum.</p>
-
-            <a href="#">A Super Cool Link</a>
-        </div>
-    </section>
-
+  <nav class="border-b">
     <div class="container">
-        <hr />
-    </div>
-
-    <section class="py-2">
-        <div class="container">
-            <h1>Heading 1</h1>
-            <h2>Heading 2</h2>
-            <h3>Heading 3</h3>
-            <h4>Heading 4</h4>
-            <h5>Heading 5</h5>
-            <h6>Heading 6</h6>
+      <div class="bg-white py-1">
+        <div class="flex flex-row justify-between">
+          <h4 class="my-auto">Logo</h4>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-menu my-auto">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </div>
-    </section>
+      </div>
+    </div>
+  </nav>
 
+  <div id="content" class="py-1">
     <div class="container">
-        <hr />
+      <div class="py-1">
+        <h1>Welcome to the website</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ut similique quasi omnis quod dolore
+          temporibus
+          dolorum cumque enim aut officiis sapiente placeat, veniam ab ipsa numquam eius, quis quae. Lorem ipsum dolor
+          sit
+
+        </p>
+
+        <p>
+          amet consectetur adipisicing elit. Dignissimos ea omnis inventore, officia odit blanditiis facilis est
+          voluptatum quibusdam, voluptates repellat dolorem nulla facere nihil iste libero. Reprehenderit, nostrum
+          atque!
+        </p>
+      </div>
+
+      <div>
+        <h5>Code Snippet</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa iure nam sunt voluptatibus magnam, recusandae
+          totam quidem praesentium impedit molestiae, amet voluptate vero, tenetur earum illum consequuntur libero vel
+          unde.</p>
+        <code>
+          <pre>
+#include &lt;iostream&gt;
+
+int main() {
+  std::cout << "Hello world\n";
+}          </pre>
+        </code>
+      </div>
+
+      <div class="py-2">
+        <h6>Data Table</h6>
+        <p>Lorem ipsum dolor sit, amet <em>consectetur</em> adipisicing elit. Sit voluptate est temporibus? Autem, ipsam.
+          Obcaecati asperiores laborum quasi expedita recusandae! Similique odit fugiat mollitia accusantium sit
+          perferendis fuga laborum veniam!</p>
+        <table>
+          <thead class="border-b">
+            <tr>
+              <th>#</th>
+              <th>Data Type</th>
+              <th>Size</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>int</td>
+              <td>4 Bytes</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>char</td>
+              <td>1 Byte</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>foat</td>
+              <td>4 Bytes</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>double</td>
+              <td>8 Bytes</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>bool</td>
+              <td>1 Byte</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-    <section class="py-2">
-        <div class="container">
-
-            <fieldset class="my-1">
-                <label>Name</label>
-                <input type="text" />
-            </fieldset>
-
-            <fieldset class="my-1">
-                <label>Password</label>
-                <input type="password" />
-            </fieldset>
-
-            <fieldset class="my-1">
-                <label>City</label>
-                <select>
-                    <option value="1">Lahore</option>
-                    <option value="2">Karachi</option>
-                    <option value="3">Gawadar</option>
-                </select>
-            </fieldset>
-
-            <button class="primary shadow-sm">Submit</button>
-            <button class="bg-white">Clear</button>
-        </div>
-    </section>
-
+  </div>
 </body>
-
-</html>

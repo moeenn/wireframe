@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/dist/wireframe.css">
+	<title>Wireframe CSS</title>
+	<style>
+		#login-box {
+			width: 30rem;
+		}
+
+		.grid {
+			place-content: center;
+		}
+
+		#actions {
+			padding-top: 0.5rem;
+		}
+	</style>
+
+</head>
+
+<body class="grid h-screen">
+	<div id="login-box" class="border p-1 shadow-lg rounded">
+
+		<h4>Login</h4>
+
+		<div class="">
+			<fieldset class="my-1">
+				<label>Username</label>
+				<input type="text" />
+			</fieldset>
+	
+			<fieldset class="my-1">
+				<label>Password</label>
+				<input type="password" />
+			</fieldset>
+		</div>
+
+		<div id="actions" class="flex justify-between">
+			<button class="primary shadow-sm">Login</button>
+			<a href="#" class="my-auto">Forgot Password</a>
+		</div>
+	</div>
+</body>
+
+</html>

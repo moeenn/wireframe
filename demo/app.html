@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/wireframe.css">
+  <title>Wireframe CSS - Dashboard</title>
+</head>
+
+<style>
+  #app {
+    grid-template-rows: 4rem auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "nav"
+      "content";
+  }
+
+  #nav {
+    grid-area: nav;
+    border-bottom: var(--border);
+  }
+
+  #content {
+    grid-area: content;
+    overflow-y: auto;
+  }
+
+  #sidebar {
+    display: none;
+  }
+
+  @media all and (min-width: 600px) {
+    #app {
+      grid-template-columns: 20rem 1fr;
+      grid-template-areas:
+        "nav     nav     nav     nav"
+        "sidebar content content content";
+    }
+
+    #sidebar {
+      display: block;
+      grid-area: sidebar;
+      border-right: var(--border);
+      overflow-y: auto;
+    }
+  }
+</style>
+
+<body class="h-screen w-screen">
+  <div class="grid h-screen" id="app">
+    <div id="nav">
+
+    </div>
+
+    <div id="sidebar">
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+      <div class="p-1">Sidebar Item</div>
+    </div>
+
+    <div id="content" class="px-2">
+      <div class="py-5">
+        <h1>Main Content</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis aut provident doloremque, a aspernatur
+          dolorem eos consectetur vitae quod quibusdam sunt suscipit id perspiciatis quas, recusandae, officiis optio
+          iure
+          consequuntur!</p>
+      </div>
+
+      <div class="py-5">
+        <h1>Main Content</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis aut provident doloremque, a aspernatur
+          dolorem eos consectetur vitae quod quibusdam sunt suscipit id perspiciatis quas, recusandae, officiis optio
+          iure
+          consequuntur!</p>
+      </div>
+
+      <div class="py-5">
+        <h1>Main Content</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis aut provident doloremque, a aspernatur
+          dolorem eos consectetur vitae quod quibusdam sunt suscipit id perspiciatis quas, recusandae, officiis optio
+          iure
+          consequuntur!</p>
+      </div>
+
+      <div class="py-5">
+        <h1>Main Content</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis aut provident doloremque, a aspernatur
+          dolorem eos consectetur vitae quod quibusdam sunt suscipit id perspiciatis quas, recusandae, officiis optio
+          iure
+          consequuntur!</p>
+      </div>
+
+      <div class="py-5">
+        <h1>Main Content</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis aut provident doloremque, a aspernatur
+          dolorem eos consectetur vitae quod quibusdam sunt suscipit id perspiciatis quas, recusandae, officiis optio
+          iure
+          consequuntur!</p>
+      </div>
+    </div>
+
+  </div>
+</body>

@@ -1,5 +1,5 @@
 :root {
-  --font-size: 0.92rem;
+  --font-size: 0.925rem;
 
   --bg-normal: 0, 0%, 100%;
   --bg-dull: 0, 0%, 91%;
@@ -30,10 +30,6 @@
   border: none;
   font-weight: normal;
   font-size: var(--font-size);
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -115,10 +111,9 @@ button.primary {
 }
 
 fieldset :is(input, textarea, select) {
-  --alpha: 0.5;
   display: block;
   width: 100%;
-  background-color: hsla(var(--bg-dull), var(--alpha, 1)); 
+  background-color: hsla(var(--bg-dull), var(--alpha, 0.5)); 
 }
 
 hr {
@@ -132,10 +127,10 @@ a {
 }
 
 code pre {
-  --alpha: 1;
   font-family: system-ui;
-  background-color: hsla(var(--bg-dull), var(--alpha));
+  background-color: hsla(var(--bg-dull), var(--alpha, 1));
   padding: var(--space);
+  border-radius: var(--border-radius);
 }
 
 em {
@@ -152,7 +147,7 @@ table {
 
 table :is(th, td) {
   text-align: left;
-  padding: calc(var(--space) / 3);
+  padding: calc(var(--space) / 2);
 }
 
 table th {

@@ -6,7 +6,7 @@
   --bg-dark: 210, 29%, 20%;
   
   --font-color-normal: 210, 6%, 13%;
-  --font-color-dull: 203, 9%, 63%;
+  --font-color-dull: 203, 9%, 50%;
   --font-color-dark: 204, 3%, 10%;
 
   --border-width: calc(var(--font-size) / 10); 
@@ -98,6 +98,11 @@ p {
   border-radius: var(--border-radius);
 }
 
+:is(input, textarea)::placeholder {
+  font-size: calc(var(--font-size) * 0.9);
+  color: hsl(var(--font-color-dull));
+}
+
 button {
   background-color: hsla(var(--bg-normal), var(--alpha, 1));
   padding: calc(var(--space) / 1.5) var(--space);
@@ -133,7 +138,7 @@ code pre {
   border-radius: var(--border-radius);
 }
 
-em {
+:is(mark, em) {
   font-style: normal;
   background: hsl(var(--bg-dull), var(--alpha, 0.8));
   padding: calc(var(--space) * 0.15) calc(var(--space) * 0.33);

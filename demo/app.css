@@ -1,0 +1,41 @@
+#app {
+  grid-template-rows: 4rem auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "nav"
+    "content";
+}
+
+#nav {
+  grid-area: nav;
+  border-bottom: var(--border);
+}
+
+#content {
+  grid-area: content;
+  overflow-y: auto;
+}
+
+#sidebar {
+  display: none;
+}
+
+#sidebar div:hover {
+  background-color: hsla(var(--bg-dull), 0.5);
+}
+
+@media all and (min-width: 600px) {
+  #app {
+    grid-template-columns: 20rem 1fr;
+    grid-template-areas:
+      "nav     nav     nav     nav"
+      "sidebar content content content";
+  }
+
+  #sidebar {
+    display: block;
+    grid-area: sidebar;
+    border-right: var(--border);
+    overflow-y: auto;
+  }
+}

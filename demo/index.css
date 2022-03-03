@@ -1,0 +1,17 @@
+body {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 4.5rem auto;
+  grid-template-areas:
+    "nav"
+    "content";
+}
+
+nav {
+  grid-area: nav;
+}
+
+#content {
+  grid-area: content;
+  overflow-y: auto;
+}

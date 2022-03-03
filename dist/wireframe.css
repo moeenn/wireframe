@@ -11,15 +11,18 @@
 
   --border-width: calc(var(--font-size) / 10); 
   --border: var(--border-width) solid hsla(var(--bg-dull), var(--alpha, 1));
-  --border-radius: 0.2rem;
+  --border-radius: 0.25rem;
 
   --accent-color: 192, 100%, 31%;
 
-  --shadow-sm: 0 2px 4px -1px hsla(214, 53%, 23%, 0.07), 0 3px 12px -1px hsla(214, 50%, 22%, 0.14);
-  --shadow: 0 4px 24px -3px hsla(214, 53%, 23%, 0.07), 0 18px 64px -8px hsla(214, 47%, 21%, 0.14); 
-  --shadow-lg:  0 6px 48px -5px hsla(214, 53%, 23%, 0.07), 0 36px 128px -15px hsla(214, 47%, 21%, 0.14);
+  --shadow-sm: 0 2px 4px -1px hsla(214, 53%, 23%, 0.07), 
+    0 3px 12px -1px hsla(214, 50%, 22%, 0.14);
+  --shadow: 0 4px 24px -3px hsla(214, 53%, 23%, 0.07), 
+    0 18px 64px -8px hsla(214, 47%, 21%, 0.14); 
+  --shadow-lg:  0 6px 48px -5px hsla(214, 53%, 23%, 0.07), 
+    0 36px 128px -15px hsla(214, 47%, 21%, 0.14);
 
-  --space: 1.15rem;
+  --space: 1.2rem;
   --container-width: 87vw;
 }
 
@@ -30,6 +33,11 @@
   border: none;
   font-weight: normal;
   font-size: var(--font-size);
+}
+
+:is(html, body) {
+	height: 100vh;
+	width: 100vw;
 }
 
 body {
@@ -48,42 +56,37 @@ body {
   font-family: serif;
   margin-bottom: calc(var(--space) * 0.75);
   letter-spacing: calc(var(--font-size) / 46);
+  line-height: calc(var(--size, var(--font-size)) + 0.4rem); 
 }
 
 h1 {
   --size: calc(var(--font-size) * 3);
   font-size: var(--size);
-  line-height: calc(var(--size) + 0.4rem);
 }
 
 h2 {
   --size: calc(var(--font-size) * 2.4);
   font-size: var(--size);
-  line-height: calc(var(--size) + 0.4rem);
 }
 
 h3 {
   --size: calc(var(--font-size) * 2.2);
   font-size: var(--size);
-  line-height: calc(var(--size) + 0.4rem);
 }
 
 h4 {
   --size: calc(var(--font-size) * 1.9);
   font-size: var(--size);
-  line-height: calc(var(--size) + 0.4rem);
 }
 
 h5 {
   --size: calc(var(--font-size) * 1.6);
   font-size: var(--size);
-  line-height: calc(var(--size) + 0.4rem);
 }
 
 h6 {
   --size: calc(var(--font-size) * 1.4);
   font-size: var(--size);
-  line-height: calc(var(--size) + 0.4rem);
 }
 
 p {
@@ -103,13 +106,13 @@ p {
   color: hsl(var(--font-color-dull));
 }
 
-button {
+:is(button, input[type='submit']) {
   background-color: hsla(var(--bg-normal), var(--alpha, 1));
   padding: calc(var(--space) / 1.5) var(--space);
   cursor: pointer;
 }
 
-button.primary {
+:is(button, input[type='submit']).primary {
   background-color: hsla(var(--accent-color), var(--alpha, 1));
   font-weight: bold;
   color: hsla(var(--bg-normal), var(--alpha, 1));
@@ -215,6 +218,14 @@ table tbody tr:hover {
  
 
 /**
+ *  cursor utilities
+ *
+ */
+.cursor-normal { cursor: unset; }
+.cursor-pointer { cursor: pointer; }
+
+
+/**
  *  spaceing related classes 
  *
  */
@@ -270,11 +281,13 @@ table tbody tr:hover {
  *
  */
 .flex { display: flex; }
+.inline-flex { display: inline-flex; }
 .block { display: block; }
+.inline-block { display: inline-block; }
 .grid { display: grid; }
 .relative { display: relative; }
 .absolute { display: absolute; }
-.hiddne { display: none; }
+.hidden { display: none; }
 
 
 /**
@@ -285,6 +298,7 @@ table tbody tr:hover {
 .w-screen { width: 100vw; }
 .h-screen { height: 100vh; }
 .w-full { width: 100%; }
+
 
 /**
  *  flexbox utilities

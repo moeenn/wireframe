@@ -1,0 +1,11 @@
+#login-box {
+  width: 30rem;
+}
+
+.grid {
+  place-content: center;
+}
+
+#actions {
+  padding-top: 0.5rem;
+}

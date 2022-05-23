@@ -5,7 +5,7 @@
   --bg-dull: 0, 0%, 95%;
   --bg-dark: 0, 0%, 90%;
   
-  --font-color-normal: 210, 6%, 30%;
+  --font-color-normal: 210, 6%, 15%;
   --font-color-dull: 203, 9%, 50%;
   --font-color-dark: 204, 3%, 10%;
 
@@ -25,19 +25,24 @@
   border: none;
   font-weight: normal;
   font-size: var(--font-size);
+  color: hsl(var(--font-color-normal));
+  accent-color: hsl(var(--accent-color));
 }
 
 body {
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
 	'Apple Color Emoji', 'Segoe UI Emoji';
-  color: rgb(var(--font-color-normal));
+}
+
+::selection {
+  color: white;
+  background: hsl(var(--accent-color));
 }
 
 .container {
   width: min(95%, var(--container-width));
 	margin-inline: auto;
-  padding-left: calc(var(--space) / 2);
-  padding-right: calc(var(--space) / 2);
+  padding: 0 calc(var(--space) / 2);
 }
 
 section {
@@ -89,8 +94,9 @@ p {
 
 :is(button, input, textarea, select) {
   font-size: calc(var(--font-size) * 0.9);
-  padding: calc(var(--space) / 1.5);
+  padding: calc(var(--space) / 2);
   background-color: hsl(var(--bg-dull));
+  border: var(--border);
   border-radius: var(--border-radius);
 }
 
@@ -99,7 +105,7 @@ textarea {
 }
 
 :is(button, input, textarea, select):focus {
-  outline: calc(var(--border-width) * 1.5) solid black;
+  outline: calc(var(--border-width) * 1.5) solid hsl(0, 0%, 50%);
 }
 
 :is(input, textarea)::placeholder {
@@ -108,7 +114,8 @@ textarea {
 }
 
 :is(button, input[type='submit']) {
-  padding: calc(var(--space) / 1.5) var(--space);
+  padding-left: calc(var(--space) / 1.5);
+  padding-right: calc(var(--space) / 1.5);
   cursor: pointer;
   background-color: hsl(var(--bg-dark));
 }
@@ -139,7 +146,6 @@ a {
 
 code pre {
   font-family: system-ui;
-  font-size: calc(var(--font-size) * 1.1);
   line-height: 1.8rem;
   letter-spacing: 0.05rem;
   background-color: hsl(var(--bg-dark));
@@ -171,4 +177,9 @@ table :is(th, td) {
 table th {
   color: hsl(var(--font-color-dull));
   font-weight: bold;
+}
+
+img {
+  border-radius: var(--border-radius);
+  object-fit: cover;
 }

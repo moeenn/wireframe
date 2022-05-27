@@ -2,7 +2,7 @@
   --font-size: 0.925rem;
 
   --bg-normal: 0, 0%, 100%;
-  --bg-dull: 0, 0%, 95%;
+  --bg-dull: 0, 0%, 97%;
   --bg-dark: 0, 0%, 90%;
   
   --font-color-normal: 210, 6%, 15%;
@@ -114,10 +114,12 @@ textarea {
 }
 
 :is(button, input[type='submit']) {
-  padding-left: calc(var(--space) / 1.5);
-  padding-right: calc(var(--space) / 1.5);
-  cursor: pointer;
+  padding: calc(var(--space) / 2) calc(var(--space) / 1.5);
   background-color: hsl(var(--bg-dark));
+}
+
+:is(button, input[type='submit'], input[type='checkbox']) {
+  cursor: pointer;
 }
 
 fieldset {

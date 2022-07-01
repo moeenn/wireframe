@@ -3,7 +3,7 @@
 
   --bg-normal: 0, 0%, 100%;
   --bg-dull: 0, 0%, 97%;
-  --bg-dark: 0, 0%, 90%;
+  --bg-dark: 0, 0%, 80%;
   
   --font-color-normal: 210, 6%, 15%;
   --font-color-dull: 203, 9%, 50%;
@@ -11,7 +11,6 @@
 
   --border-width: calc(var(--font-size) / 10); 
   --border: var(--border-width) solid hsl(var(--bg-dark));
-  --border-radius: 0.25rem;
 
   --accent-color: 192, 100%, 31%;
   --space: 1.2rem;
@@ -95,9 +94,8 @@ p {
 :is(button, input, textarea, select) {
   font-size: calc(var(--font-size) * 0.9);
   padding: calc(var(--space) / 2);
-  background-color: hsl(var(--bg-dull));
+  background-color: transparent;
   border: var(--border);
-  border-radius: var(--border-radius);
 }
 
 textarea {
@@ -105,7 +103,7 @@ textarea {
 }
 
 :is(button, input, textarea, select):focus {
-  outline: calc(var(--border-width) * 1.5) solid hsl(0, 0%, 50%);
+  outline: calc(var(--border-width) * 1.5) solid hsl(var(--font-color-dull));
 }
 
 :is(input, textarea)::placeholder {
@@ -115,7 +113,12 @@ textarea {
 
 :is(button, input[type='submit']) {
   padding: calc(var(--space) / 2) calc(var(--space) / 1.5);
-  background-color: hsl(var(--bg-dark));
+  background-color: transparent;
+}
+
+:is(button, input[type='submit']):hover,
+:is(input, textarea, select):focus {
+  background-color: hsl(var(--bg-dull));
 }
 
 :is(button, input[type='submit'], input[type='checkbox']) {
@@ -150,9 +153,8 @@ code pre {
   font-family: system-ui;
   line-height: 1.8rem;
   letter-spacing: 0.05rem;
-  background-color: hsl(var(--bg-dark));
+  background-color: hsl(var(--bg-dull));
   padding: var(--space);
-  border-radius: var(--border-radius);
 }
 
 code pre .comment {
@@ -163,7 +165,6 @@ code pre .comment {
   font-style: normal;
   background: hsl(var(--bg-dull));
   padding: calc(var(--space) * 0.15) calc(var(--space) * 0.33);
-  border-radius: var(--border-radius);
 }
 
 table {
@@ -182,6 +183,5 @@ table th {
 }
 
 img {
-  border-radius: var(--border-radius);
   object-fit: cover;
 }
